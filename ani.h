@@ -1,6 +1,9 @@
 #include<cstdlib>
 #include<iostream>
+#include<fstream>
 #include <cstring>
+#include<locale.h>
+#include<windows.h>
 
 using namespace std;
 
@@ -17,6 +20,7 @@ using namespace std;
 
 	    virtual void Add() = 0;
 	    virtual void Save() = 0;
+	    virtual void Load() = 0;
 	    //virtual void Delete() = 0;
 
 	    virtual void Check() = 0;
@@ -38,6 +42,7 @@ using namespace std;
  	    void Add();
  	    void Check();
  	    void Save();
+ 	    void Load();
 
  };
 
@@ -56,6 +61,7 @@ using namespace std;
  	    void Add();
  	    void Check();
  	    void Save();
+ 	    void Load();
  };
 /*
  class Cat : public Animal{
