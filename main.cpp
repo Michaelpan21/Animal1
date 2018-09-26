@@ -1,12 +1,6 @@
-#include <iostream>
-
-
 
 
 #include "Animal.h"
-
-
-
 
 
 int main(int argc, char** argv) {
@@ -28,17 +22,7 @@ int main(int argc, char** argv) {
 
       do{
 
-            cout << endl << endl << endl << "     МЕНЮ  : ";
-            cout << endl << " 1. ДОБАВИТЬ РЫБУ   в  Базу ";
-            cout << endl << " 2. ДОБАВИТЬ ПТИЦУ  в  Базу ";
-            cout << endl << " 3. ДОБАВИТЬ КОШКУ  в  Базу " << endl;
-            cout << endl << " 4. УДАЛИТЬ  РЫБУ   из Базы ";
-            cout << endl << " 5. УДАЛИТЬ  ПТИЦУ  из Базы ";
-            cout << endl << " 6. УДАЛИТЬ  КОШКУ  из Базы " << endl;
-            cout << endl << " 7. ПОИСК по Базе Данных ";
-            cout << endl << " 8. ВЫВОД Базы на Экран ";
-            cout << endl << " 9. СОХРАНИТЬ ";
-            cout << endl << " 0. ВЫХОД " << endl;
+            ob -> ShowMenu();
 
             cin >> choice;
             cout << "\n\n";
