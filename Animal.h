@@ -7,6 +7,8 @@
 
 using namespace std;
 
+
+
  class Animal{
 
     protected :
@@ -26,13 +28,13 @@ using namespace std;
 	    virtual void Check() = 0;
 	    virtual ~Animal(){};
 
-        virtual void ShowMenu() = 0;
-
  };
+
+
 
   class Fish : public Animal{
 
- 	private :
+ 	protected :
 
  	    char **Food;
 
@@ -45,12 +47,14 @@ using namespace std;
  	    void Check();
  	    void Save();
  	    void Load();
- 	    void ShowMenu();
 
  };
+
+
+
   class Bird : public Animal{
 
- 	private :
+ 	protected :
 
  		char **Food;
  		char **Habitat;
@@ -64,15 +68,56 @@ using namespace std;
  	    void Check();
  	    void Save();
  	    void Load();
- 	    void ShowMenu(){};
  };
 
 
 
-
-
-/*
  class Cat : public Animal{
+
+ 	protected :
+
+ 		char **FIO;
+ 		char **Nickname;
+
+ 	public :
+
+
+ 		Cat();
+ 		~Cat();
  	    void Add();
+ 	    void Check();
+ 	    void Save();
+ 	    void Load();
  };
- */
+
+
+
+ class Menu{
+
+ public :
+
+     void ShowMenu();
+     void Colour_Green();
+     void Colour_Green_Light();
+     void Colour_Blue();
+     void Colour_Blue_Light();
+     void Colour_Red();
+     void Colour_Red_Ligth();
+     void Colour_White();
+     void Colour_White_Int();
+     void Colour_Grey();
+     void Colour_Yellow();
+     void Colour_Yellow_Ligth();
+     void Colour_Purple();
+     void Colour_Red_Light();
+
+     void Back_Grey();
+     void Back_Yellow();
+     void Back_Purple();
+     void Back_Lightblue();
+     void Back_Green();
+     void Back_Black();
+     void Back_White();
+
+
+ };

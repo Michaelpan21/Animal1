@@ -9,20 +9,26 @@ int main(int argc, char** argv) {
     SetConsoleCP (1251);
     SetConsoleOutputCP(1251);
 
-	Animal *ob = new Fish;
+	Animal *ob =  new Fish;
 	Animal *ob1 = new Bird;
+	Animal *ob2 = new Cat;
+
+	Menu Menu;
 
     ob -> Load();
     ob -> Check();
-
+    cout << "\n\n";
     ob1 -> Load();
     ob1 -> Check();
+    cout << "\n\n";
+    ob2 -> Load();
+    ob2 -> Check();
 
     int choice;
 
       do{
 
-            ob -> ShowMenu();
+            Menu.ShowMenu();
 
             cin >> choice;
             cout << "\n\n";
@@ -45,9 +51,9 @@ int main(int argc, char** argv) {
 
                    case 3 :
 
-                       ob1 -> Add();
-                       ob1 -> Check();
-                       ob1 -> Save();
+                       ob2 -> Add();
+                       ob2 -> Check();
+                       ob2 -> Save();
                      break;
 
                    case 4 :

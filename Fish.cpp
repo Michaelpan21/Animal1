@@ -87,12 +87,38 @@
 
  void Fish :: Check(){
 
- 	for(int i = 0 ; i < size ; i++){
+    Menu ob;
 
- 	   cout << endl << i+1 << ") Ïîðîäà : " << Breed[i];
-	   cout << endl << " Öâåò : " << Colour[i];
-	   cout << endl << " Òèï Ïèòàíèÿ : " << Food[i] << endl;
-     }
+    ob.Colour_Green();
+    cout << endl << endl <<  "                                ÒÀÁËÈÖÀ  ÐÛÁÛ  " << endl << endl;
+
+    ob.Colour_White_Int();
+
+ 	    cout << endl << " ÍÎÌÅÐ ||";
+ 	    cout << "                 ÏÎÐÎÄÀ               ||";
+ 	    cout << "                          ÖÂÅÒ                        ||";
+ 	    cout << "           ÒÈÏ ÏÈÒÀÍÈß          ";
+
+     cout << endl;
+
+
+      for(int i = 0 ; i < size ; i++){
+
+
+        ob.Back_White(); printf(" %3d\t", i+1);
+        ob.Back_Grey(); printf("\t%30s\t", Breed[i]);
+        ob.Back_Green(); printf("\t%40s\t",  Colour[i]);
+        ob.Back_Lightblue(); printf("\t%20s\t",  Food[i]);
+        ob.Back_Black();  cout << " ÷ " << endl;
+
+
+        ob.Back_White();    cout << "--------";
+ 	    ob.Back_Grey();     cout << "----------------------------------------";
+ 	    ob.Back_Green();    cout << "--------------------------------------------------------";
+        ob.Back_Lightblue();cout << "--------------------------------";
+ 	    ob.Back_Black();    cout << "    ÷åðíûé òåêñò íà ÷åðíîì ôîíå      " << endl;
+      }
+
  }
 
 
@@ -169,24 +195,6 @@ void Fish :: Load(){
 
 //--------------------------------------------------------------------------------------------------------------
 
-
-void Fish :: ShowMenu(){
-            cout << endl << endl << endl << "     ÌÅÍÞ : ";
-            cout << endl << " 1. ÄÎÁÀÂÈÒÜ ÐÛÁÓ   â  Áàçó ";
-            cout << endl << " 2. ÄÎÁÀÂÈÒÜ ÏÒÈÖÓ  â  Áàçó ";
-            cout << endl << " 3. ÄÎÁÀÂÈÒÜ ÊÎØÊÓ  â  Áàçó " << endl;
-            cout << endl << " 4. ÓÄÀËÈÒÜ  ÐÛÁÓ   èç Áàçû ";
-            cout << endl << " 5. ÓÄÀËÈÒÜ  ÏÒÈÖÓ  èç Áàçû ";
-            cout << endl << " 6. ÓÄÀËÈÒÜ  ÊÎØÊÓ  èç Áàçû " << endl;
-            cout << endl << " 7. ÏÎÈÑÊ ïî Áàçå Äàííûõ ";
-            cout << endl << " 8. ÂÛÂÎÄ Áàçû íà Ýêðàí ";
-            cout << endl << " 9. ÑÎÕÐÀÍÈÒÜ ";
-            cout << endl << " 0. ÂÛÕÎÄ " << endl;
-}
-
-
-
-//--------------------------------------------------------------------------------------------------------------
 
 
 

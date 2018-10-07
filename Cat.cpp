@@ -9,27 +9,27 @@
 
 
 
- Bird :: Bird(){
+ Cat :: Cat(){
 
  	size = 0;
  }
 
- void Bird :: Add(){
+ void Cat :: Add(){
 
 
-    char Breed2[100];     char Colour2[100];     char Food2[100];     char Habitat2[100];
-    int tmp_Breed[1000];  int tmp_Colour[1000];  int tmp_Food[1000];  int tmp_Habitat[1000];
+    char Breed2[100];     char Colour2[100];     char FIO2[100];     char Nickname2[100];
+    int tmp_Breed[1000];  int tmp_Colour[1000];  int tmp_FIO[1000];  int tmp_Nickname[1000];
 
-    cout << endl << " Введите Породу Птицы : ";      for(int i = 0 ; i < 2 ; i++) gets(Breed2);
-    cout << " Введите Окрас Птицы : ";                                            gets(Colour2);
-    cout << " Введите Тип Питания Птицы : ";                                      gets(Food2);
-    cout << " Введите Место Обитания Птицы : ";                                   gets(Habitat2);
+    cout << endl << "  > Введите Породу Кошки : ";      for(int i = 0 ; i < 2 ; i++) gets(Breed2);
+    cout << "  > Введите Окрас Кошки : ";                                            gets(Colour2);
+    cout << "  > Введите ФИО Владельца Кошки : ";                                    gets(FIO2);
+    cout << "  > Введите Кличку Кошки : ";                                           gets(Nickname2);
 
 
     char **Breed_Ex = new char*[size];
     char **Colour_Ex = new char*[size];
-    char **Food_Ex = new char*[size];
-    char **Habitat_Ex = new char*[size];
+    char **FIO_Ex = new char*[size];
+    char **Nickname_Ex = new char*[size];
 
       if(size > 0){
 
@@ -41,20 +41,20 @@
                 for(int i = 0 ; i < size ; i++){ strcpy(Colour_Ex[i], Colour[i]);        }
 
 
-            for(int i = 0 ; i < size ; i++){ Food_Ex[i] = new char[tmp_Food[i] + 1];     }
-                for(int i = 0 ; i < size ; i++){ strcpy(Food_Ex[i], Food[i]);            }
+            for(int i = 0 ; i < size ; i++){ FIO_Ex[i] = new char[tmp_FIO[i] + 1];     }
+                for(int i = 0 ; i < size ; i++){ strcpy(FIO_Ex[i], FIO[i]);            }
 
 
-            for(int i = 0 ; i < size ; i++){ Habitat_Ex[i] = new char[tmp_Habitat[i] + 1];     }
-                for(int i = 0 ; i < size ; i++){ strcpy(Habitat_Ex[i], Habitat[i]);            }
+            for(int i = 0 ; i < size ; i++){ Nickname_Ex[i] = new char[tmp_Nickname[i] + 1];     }
+                for(int i = 0 ; i < size ; i++){ strcpy(Nickname_Ex[i], Nickname[i]);            }
           }
 
     size++;
 
     tmp_Breed[size-1] = strlen(Breed2);
     tmp_Colour[size-1] = strlen(Colour2);
-    tmp_Food[size-1] = strlen(Food2);
-    tmp_Food[size-1] = strlen(Habitat2);
+    tmp_FIO[size-1] = strlen(FIO2);
+    tmp_Nickname[size-1] = strlen(Nickname2);
 
 
 
@@ -70,40 +70,40 @@
                 strcpy(Colour[size-1], Colour2);
 
 
-      Food = new char*[size];
-         for(int i = 0 ; i < size ; i++){ Food[i] = new char[tmp_Food[size-1] + 1];     }
-             for(int i = 0 ; i < size - 1 ; i++){ strcpy(Food[i], Food_Ex[i]);         }
-                strcpy(Food[size-1], Food2);
+      FIO = new char*[size];
+         for(int i = 0 ; i < size ; i++){ FIO[i] = new char[tmp_FIO[size-1] + 1];     }
+             for(int i = 0 ; i < size - 1 ; i++){ strcpy(FIO[i], FIO_Ex[i]);         }
+                strcpy(FIO[size-1], FIO2);
 
-      Habitat = new char*[size];
-         for(int i = 0 ; i < size ; i++){ Habitat[i] = new char[tmp_Habitat[size-1] + 1];    }
-             for(int i = 0 ; i < size - 1; i++){ strcpy(Habitat[i], Habitat_Ex[i]);     }
-                strcpy(Habitat[size-1], Habitat2);
+      Nickname = new char*[size];
+         for(int i = 0 ; i < size ; i++){ Nickname[i] = new char[tmp_Nickname[size-1] + 1];    }
+             for(int i = 0 ; i < size - 1; i++){ strcpy(Nickname[i], Nickname_Ex[i]);     }
+                strcpy(Nickname[size-1], Nickname2);
 
      for(int i = 0 ; i < size ; i++){ delete []Breed_Ex[i];  }
      for(int i = 0 ; i < size ; i++){ delete []Colour_Ex[i]; }
-     for(int i = 0 ; i < size ; i++){ delete []Food_Ex[i];   }
-     for(int i = 0 ; i < size ; i++){ delete []Habitat_Ex[i];}
+     for(int i = 0 ; i < size ; i++){ delete []FIO_Ex[i];   }
+     for(int i = 0 ; i < size ; i++){ delete []Nickname_Ex[i];}
  }
 
 
 //--------------------------------------------------------------------------------------------------------------
 
 
- void Bird :: Check(){
+ void Cat :: Check(){
 
     Menu ob;
 
-    ob.Colour_Blue();
-    cout << endl << endl <<  "                                ТАБЛИЦА  ПТИЦЫ  " << endl << endl;
+    ob.Colour_Red();
+    cout << endl << endl <<  "                                ТАБЛИЦА  КОШКИ " << endl << endl;
 
     ob.Colour_White_Int();
 
  	    cout << endl << " НОМЕР ||";
  	    cout << "                ПОРОДА                ||";
  	    cout << "                          ЦВЕТ                        ||";
- 	    cout << "          ТИП ПИТАНИЯ         ||";
- 	    cout << "             МЕСТО ОБИТАНИЯ             ";
+ 	    cout << "                       ФИО ВЛАДЕЛЬЦА                  ||";
+ 	    cout << "             КЛИЧКА            ";
 
      cout << endl;
 
@@ -113,15 +113,15 @@
         ob.Back_White(); printf(" %3d\t", i+1);
         ob.Back_Grey(); printf("\t%30s\t", Breed[i]);
         ob.Back_Green(); printf("\t%40s\t",  Colour[i]);
-        ob.Back_Lightblue(); printf("\t%20s\t",  Food[i]);
-        ob.Back_Yellow(); printf("\t%25s\t", Habitat[i]);
+        ob.Back_Lightblue(); printf("\t%40s\t",  FIO[i]);
+        ob.Back_Yellow(); printf("\t%25s\t", Nickname[i]);
         ob.Back_Black();  cout << " ч " << endl;
 
 
         ob.Back_White();    cout << "--------";
  	    ob.Back_Grey();     cout << "----------------------------------------";
  	    ob.Back_Green();    cout << "--------------------------------------------------------";
-        ob.Back_Lightblue();cout << "--------------------------------";
+        ob.Back_Lightblue();cout << "--------------------------------------------------------";
  	    ob.Back_Yellow();   cout << "----------------------------------------";
  	    ob.Back_Black();    cout << "    черный текст на черном фоне      " << endl;
       }
@@ -132,9 +132,9 @@
 //--------------------------------------------------------------------------------------------------------------
 
 
- void Bird :: Save(){
+ void Cat :: Save(){
 
-   ofstream fpout("Bird.txt", ios_base::out);
+   ofstream fpout("Cat.txt", ios_base::out);
 
    if (!fpout.is_open())
         cout << "Файл не может быть открыт!\n";
@@ -142,8 +142,8 @@
    for(int i = 0 ; i < size ; i++){
             fpout << Breed[i] ;fpout << endl;
             fpout << Colour[i]       << endl;
-            fpout << Food[i]         << endl;
-            fpout << Habitat[i]      << endl;
+            fpout << FIO[i]          << endl;
+            fpout << Nickname[i]     << endl;
             }
 
    fpout.close();
@@ -154,16 +154,19 @@
 //--------------------------------------------------------------------------------------------------------------
 
 
- void Bird :: Load(){
+ void Cat :: Load(){
 
 
-    ifstream fpin("Bird.txt", ios_base::in);
+    ifstream fpin("Cat.txt", ios_base::in);
 
     if (!fpin.is_open())
         cout << "Файл не может быть открыт!\n";
 
     char Read[100];
-    int File_size = 0, tmp, tmp2 = 1 , numb = 0;
+    int File_size = 0;
+    int tmp;
+    int tmp2 = 1;
+    int numb = 0;
     int tmp_Read[1000];
 
 
@@ -182,24 +185,24 @@
 
     fpin.close();
 
-    fpin.open("Bird.txt", ios_base::in);
+    fpin.open("Cat.txt", ios_base::in);
 
     size = File_size / 4;
 
-    Breed = new char*[size];
-    Colour = new char*[size];
-    Food = new char*[size];
-    Habitat = new char*[size];
+    Breed    = new char*[size];
+    Colour   = new char*[size];
+    FIO      = new char*[size];
+    Nickname = new char*[size];
 
         for(int i = 0 ; i < File_size ; i++)
             {
 
                fpin.getline(Read,100);
 
-               if(tmp2 == 1) {  Breed[numb] = new char[ tmp_Read[i] + 1 ];   strcpy(Breed[numb],   Read);   }
-               if(tmp2 == 2) {  Colour[numb] = new char[ tmp_Read[i] + 1 ];  strcpy(Colour[numb],  Read);   }
-               if(tmp2 == 3) {  Food[numb] = new char[ tmp_Read[i] + 1 ];    strcpy(Food[numb],    Read);   }
-               if(tmp2 == 4) {  Habitat[numb] = new char[ tmp_Read[i] + 1 ]; strcpy(Habitat[numb], Read);   }
+               if(tmp2 == 1) {  Breed[numb] = new char[ tmp_Read[i] + 1 ];    strcpy(Breed[numb],    Read);   }
+               if(tmp2 == 2) {  Colour[numb] = new char[ tmp_Read[i] + 1 ];   strcpy(Colour[numb],   Read);   }
+               if(tmp2 == 3) {  FIO[numb] = new char[ tmp_Read[i] + 1 ];      strcpy(FIO[numb],      Read);   }
+               if(tmp2 == 4) {  Nickname[numb] = new char[ tmp_Read[i] + 1 ]; strcpy(Nickname[numb], Read);   }
 
                tmp2++;
                  if(tmp2 == 5) { tmp2 = 1; numb++; }
@@ -213,14 +216,11 @@
 //--------------------------------------------------------------------------------------------------------------
 
 
-Bird :: ~Bird(){
+Cat :: ~Cat(){
 
      for(int i = 0 ; i < size ; i++){ delete []Breed[i];  }
      for(int i = 0 ; i < size ; i++){ delete []Colour[i]; }
-     for(int i = 0 ; i < size ; i++){ delete []Food[i];   }
-     for(int i = 0 ; i < size ; i++){ delete []Habitat[i];   }
+     for(int i = 0 ; i < size ; i++){ delete []FIO[i];   }
+     for(int i = 0 ; i < size ; i++){ delete []Nickname[i];   }
 
 }
-
-
-
