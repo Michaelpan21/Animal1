@@ -4,8 +4,12 @@
 #include <cstring>
 #include<locale.h>
 #include<windows.h>
+#define setlocale (LC_ALL,"Russian")
+
 
 using namespace std;
+
+
 
 
 
@@ -22,8 +26,9 @@ using namespace std;
 
 	    virtual void Add() = 0;
 	    virtual void Save() = 0;
-	    virtual void Load() = 0;
-	    //virtual void Delete() = 0;
+	    virtual void Load(int) = 0;
+	    virtual void Delete() = 0;
+	    virtual void Edit() = 0;
 
 	    virtual void Check() = 0;
 	    virtual ~Animal(){};
@@ -44,9 +49,11 @@ using namespace std;
 		~Fish();
 
  	    void Add();
+ 	    void Delete();
+ 	    void Edit();
  	    void Check();
  	    void Save();
- 	    void Load();
+ 	    void Load(int button);
 
  };
 
@@ -65,9 +72,11 @@ using namespace std;
  		Bird();
  		~Bird();
  	    void Add();
+ 	    void Delete();
+ 	    void Edit();
  	    void Check();
  	    void Save();
- 	    void Load();
+ 	    void Load(int button);
  };
 
 
@@ -85,39 +94,34 @@ using namespace std;
  		Cat();
  		~Cat();
  	    void Add();
+ 	    void Delete();
+ 	    void Edit();
  	    void Check();
  	    void Save();
- 	    void Load();
+ 	    void Load(int button);
  };
 
 
+class Menu{
 
- class Menu{
+public:
 
- public :
+   void ShowMenu(){
 
-     void ShowMenu();
-     void Colour_Green();
-     void Colour_Green_Light();
-     void Colour_Blue();
-     void Colour_Blue_Light();
-     void Colour_Red();
-     void Colour_Red_Ligth();
-     void Colour_White();
-     void Colour_White_Int();
-     void Colour_Grey();
-     void Colour_Yellow();
-     void Colour_Yellow_Ligth();
-     void Colour_Purple();
-     void Colour_Red_Light();
-
-     void Back_Grey();
-     void Back_Yellow();
-     void Back_Purple();
-     void Back_Lightblue();
-     void Back_Green();
-     void Back_Black();
-     void Back_White();
-
-
- };
+            cout << endl << endl << endl << "     ÌÅÍÞ : " << endl;       //MENU
+            cout << endl << " 1. ÄÎÁÀÂÈÒÜ ÐÛÁÓ   â Áàçó ";                //ADD FISH
+            cout << endl << " 2. ÄÎÁÀÂÈÒÜ ÏÒÈÖÓ  â  Áàçó ";               //ADD BIRD
+            cout << endl << " 3. ÄÎÁÀÂÈÒÜ ÊÎØÊÓ  â  Áàçó " << endl;       //ADD CAT
+            cout << endl << " 4. ÓÄÀËÈÒÜ  ÐÛÁÓ   èç Áàçû ";               //DELETE FISH
+            cout << endl << " 5. ÓÄÀËÈÒÜ  ÏÒÈÖÓ  èç Áàçû ";               //DELETE FISH
+            cout << endl << " 6. ÓÄÀËÈÒÜ  ÊÎØÊÓ  èç Áàçû " << endl;       //DELETE FISH
+            cout << endl << " 7. ÐÅÄÀÊÒÈÐÎÂÀÒÜ  ÐÛÁÓ   èç Áàçû ";         //EDIT FISH
+            cout << endl << " 8. ÐÅÄÀÊÒÈÐÎÂÀÒÜ  ÏÒÈÖÓ  èç Áàçû ";         //EDIT FISH
+            cout << endl << " 9. ÐÅÄÀÊÒÈÐÎÂÀÒÜ  ÊÎØÊÓ  èç Áàçû " << endl; //EDIT FISH
+            cout << endl << " 10. ÂÛÂÎÄ ÁÀÇÓ ÄÀÍÍÛÕ ÍÀ ÝÊÐÀÍ ";           //SHOW DATABASE
+            cout << endl << " 11. ÊÎÌÀÍÄÍÀß ÑÒÐÎÊÀ ";                     //CONSOLE
+            cout << endl << " 12. ÏÎÈÑÊ ÏÎ ÁÀÇÅ ÄÀÍÍÛÕ ";                 //FIND IN DATABASE
+            cout << endl << " 13. ÑÎÕÐÀÍÈÒÜ ";                            //SAVE
+            cout << endl << " 0. ÂÛÕÎÄ " << endl;                         //EXIT
+   }
+};

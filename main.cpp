@@ -1,27 +1,27 @@
 
 
 #include "Animal.h"
+#include "ColourMenu.h"
 
 
 int main(int argc, char** argv) {
 
-    setlocale (LC_ALL,"Russian");
     SetConsoleCP (1251);
     SetConsoleOutputCP(1251);
+    Menu Menu;
 
 	Animal *ob =  new Fish;
 	Animal *ob1 = new Bird;
 	Animal *ob2 = new Cat;
 
-	Menu Menu;
 
-    ob -> Load();
+    ob -> Load(0);
     ob -> Check();
     cout << "\n\n";
-    ob1 -> Load();
+    ob1 -> Load(0);
     ob1 -> Check();
     cout << "\n\n";
-    ob2 -> Load();
+    ob2 -> Load(0);
     ob2 -> Check();
 
     int choice;
@@ -58,41 +58,67 @@ int main(int argc, char** argv) {
 
                    case 4 :
 
-                       ob -> Add();
+                       ob -> Delete();
                        ob -> Check();
                        ob -> Save();
+
                      break;
 
                    case 5 :
 
-                       ob -> Add();
-                       ob -> Check();
+                       ob1 -> Delete();
+                       ob1 -> Check();
                        ob1 -> Save();
+
                      break;
 
                    case 6 :
 
-                       ob -> Add();
-                       ob -> Check();
-                       ob -> Save();
+                       ob2 -> Delete();
+                       ob2 -> Check();
+                       ob2 -> Save();
+
                      break;
 
                    case 7 :
 
-                       ob -> Add();
+                       ob -> Edit();
                        ob -> Check();
+                       ob -> Save();
+
                      break;
 
                    case 8 :
 
-                       ob -> Add();
-                       ob -> Check();
+                       ob1 -> Edit();
+                       ob1-> Check();
+                       ob1 -> Save();
+
                      break;
+
+                   case 9 :
+
+                       ob2 -> Edit();
+                       ob2 -> Check();
+                       ob2 -> Save();
+
+                     break;
+
+                   case 10 :
+
+                     ob -> Check();
+                     ob1 -> Check();
+                     ob2 -> Check();
+
+                     break;
+
+
 
                    default :
 
                        ob -> Save();
                        ob1 -> Save();
+                       ob2 -> Save();
                      return 0;
 
                }
